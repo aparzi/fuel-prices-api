@@ -1,4 +1,6 @@
 // importing the dependencies
+const dotenv = require('dotenv');
+dotenv.config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
@@ -43,6 +45,6 @@ app.post('/search/zone', async (req, res) => {
 })
 
 // starting the server
-app.listen(3100, () => {
-    console.log('listening on port 3100');
+app.listen(process.env.PORT, () => {
+    console.log(`listening on port ${process.env.PORT}`);
 });
