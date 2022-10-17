@@ -45,6 +45,6 @@ app.post('/search/zone', async (req, res) => {
 })
 
 // starting the server
-app.listen(process.env.PORT, () => {
-    console.log(`listening on port ${process.env.PORT}`);
+app.listen(process.env.PORT || 5000, () => {
+    console.log(`listening on port ${process.env.PORT || 5000}`);
 });
