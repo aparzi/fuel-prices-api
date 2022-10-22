@@ -25,6 +25,10 @@ app.get('/', (req, res) => {
     res.send({success: 'ok', message: 'Hello world...'});
 });
 
+app.get('/regioni', require('./controllers/regioni'));
+app.get('/province/:regione', require('./controllers/province_by_regione'));
+app.get('/comuni/:provincia', require('./controllers/comuni_by_province'));
+
 app.post('/search/zone', async (req, res) => {
     try {
         const points = req.body.points;
